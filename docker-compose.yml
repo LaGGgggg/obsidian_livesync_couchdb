@@ -36,6 +36,7 @@ services:
       - nginx_secrets:/etc/letsencrypt
       - ./user_conf.d:/etc/nginx/user_conf.d
     ports:
+      - "80:80"
       - "443:443"
 
 volumes:
