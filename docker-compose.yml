@@ -11,10 +11,11 @@ services:
       - couchdb-data:/opt/couchdb/data
       - ./couchdb/local.ini:/opt/couchdb/etc/local.ini
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:5984/_up"]
+      test: ["CMD-SHELL", "curl -fsS -u \"$COUCHDB_USER:$COUCHDB_PASSWORD\" http://localhost:5984/_up"]
       interval: 10s
       timeout: 5s
-      retries: 10
+      retries: 5
+      start_period: 5s
 
   init-db:
     image: curlimages/curl:8.15.0
