@@ -1,3 +1,7 @@
+### What is it?
+This project is a simple setup to run [CouchDB](https://couchdb.apache.org/) with ssl certificates to use it with [Self-hosted LiveSync plugin](https://github.com/vrtmrz/obsidian-livesync).
+You need just to configure environment variables, setup your own domain (to issue ssl certificates), run docker compose and get your setup uri for Obsidian
+
 ### Setup guide
 1. Set .env:
     ```dotenv
