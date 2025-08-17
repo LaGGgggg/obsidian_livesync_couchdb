@@ -10,11 +10,15 @@
     COUCHDB_SETUP_URI_HOSTNAME=<your_server_domain_or_ip>
     COUCHDB_SETUP_URI_DB_NAME=<your_database_name>
     COUCHDB_SETUP_URI_PASSPHRASE=<your_passphrase>
+
+    # nginx variables:
+    CERTBOT_EMAIL=<your_email>
     ```
-2. Run docker compose: `docker compose up -d --build`
-3. Check is all ok: `docker compose logs -f`
-4. Generate setup uri
+2. Set up `user_conf.d/nginx.conf`: replace all `<domain.com>` with your domain name in the config
+3. Run docker compose: `docker compose up -d --build`
+4. Check is all ok: `docker compose logs -f`
+5. Generate setup uri
     4.1. If you do not have installed `7z` or `unzip`, install it: `sudo apt-get install unzip -y`
     4.2. If you do not have installed deno, install it: `curl -fsSL https://deno.land/install.sh | sh`
-    4.3. Run generator script: `./generate-setup-uri.sh`
-5. Save passphrase and use setup uri in Obsidian app
+    4.3. Run generator script: `chmod +x generate-setup-uri.sh && ./generate-setup-uri.sh`
+6. Save passphrase and use setup uri in Obsidian app
